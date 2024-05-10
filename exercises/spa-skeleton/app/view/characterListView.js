@@ -17,16 +17,16 @@ export function renderCharacters(characters, numOfCols) {
   const bannerContainer = $('<div class="header-section">');
   const banner = $('<h1 class="banner-text">Rick and Morty API</h1>');
   const paginator = $(`<div class="paginator">`);
-  const buttonNext = $('<button class="next-button">Next page</button>');
-  const buttonPrev = $('<button class="prev-button">Previous page</button>');
+  const buttonNext = $('<button class="next-button"><i class="fa-solid fa-arrow-right"></i></button>');
+  const buttonPrev = $('<button class="prev-button"><i class="fa-solid fa-arrow-left"></i></button>');
 
   const searchDiv = $(`<div class="search-div">`);
   const searchButton = $(
-    '<button class="search-button">Wabalabadubdub</button>'
+    '<button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>'
   );
   const searchBar = $('<input class="search-bar" type="text">');
   searchBar.val(getName());
-  searchDiv.append(searchBar, searchButton);
+  searchDiv.append(searchBar);
   content.append(bannerContainer, banner, searchDiv, paginator);
 
   $(".search-button").on("click", function () {
@@ -35,12 +35,12 @@ export function renderCharacters(characters, numOfCols) {
   });
 
   if (hasPreviousPage()) {
-    paginator.append(buttonPrev);
+    paginator.append(searchButton, buttonPrev);
     $(".prev-button").on("click", prevButtonClick);
   }
 
   if (hasNextPage()) {
-    paginator.append(buttonNext);
+    paginator.append(searchButton, buttonNext);
     $(".next-button").on("click", nextButtonClick);
   }
 

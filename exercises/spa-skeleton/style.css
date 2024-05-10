@@ -1,9 +1,11 @@
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
+}
+
 body {
   height: 100%;
   background-color: rgb(86, 86, 152);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   margin: 0px;
   padding: 0px;
 }
@@ -11,27 +13,86 @@ body {
 .header-section {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .banner-text {
-  margin: 75px;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e61b, 0 0 40px #2ce861,
-    0 0 50px #49f668, 0 0 60px #09b41d, 0 0 70px #3add43;
+  margin: 40px 0;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  font-family: 'Get Schwifty';
+  color: #08BAE3;
+  z-index: 50;
+  -webkit-text-stroke: 2px rgb(223, 249, 74);
+}
+
+p {
+  font-weight: 900;
+  font-size: 20px;
+  color: rgb(74, 193, 230);
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.search-div {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 40px;
+  padding: 10px 25px;
+  border-radius: 30px;
+  border-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.prev-button,
+.next-button,
+.search-button {
+  width: 100px;
+  height: 40px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  background-color: #00e61b;
+  box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 8px #00e61ba6, 0 0 12px;
+}
+
+.search-button {
+  background-color: #88ef3e;
+}
+
+.prev-button:hover,
+.next-button:hover,
+.search-button:hover {
+  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00e61b, 0 0 20px #2ce861,
+  0 0 25px #49f668, 0 0 30px #09b41d, 0 0 35px #3add43;
 }
 
 .name {
   margin-top: 20px;
-  color: white;
-  font-weight: bold;
 }
 
 .char {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px;
+  padding: 15px 0;
+  margin: 30px 0;
+  border-radius: 10px;
+  background-color: rgba(52, 52, 110, 0.329);
+}
+
+.char:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: rgba(52, 52, 110, 0.548);
 }
 
 .content{
@@ -45,15 +106,17 @@ body {
   display: flex;
 }
 
-.char-image {
-  height: 200px;
-  width: 200px;
+.col-lg-3 {
   border-radius: 10px;
 }
 
-.char-image:hover{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+img {
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 20px;
 }
+
 
 .character {
   margin: 20px;
