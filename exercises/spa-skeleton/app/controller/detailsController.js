@@ -24,5 +24,5 @@ export default async function init() {
     routing.character.hash.length
   );
   await loadCharacter(characterId);
-  $(".button").click(goBackButton);
+  $(".home-button").click(goBackButton);
 }

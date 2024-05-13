@@ -1,4 +1,4 @@
-import { getCharID } from "../controller/charController.js";
+import { getCharID, pageNum } from "../controller/charController.js";
 
 const URL = "https://rickandmortyapi.com/api/character";
 const LIST_URL = "https://rickandmortyapi.com/api/character?page=1";
@@ -16,6 +16,7 @@ export function hasPrevious() {
 }
 
 export function getCurrentPageNumber() {
+  console.log(pageNum);
   return pageNum;
 }
 

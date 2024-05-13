@@ -2,6 +2,7 @@ import {
   fetchCharacterListCurrentPage,
   fetchCharacterListNextPage,
   fetchCharacterListPreviousPage,
+  getCurrentPageNumber,
 } from "/app/service/service.js";
 import { renderCharacters } from "/app/view/characterListView.js";
 import * as routing from "/app/routes.js";
@@ -60,4 +61,13 @@ export async function prevButtonClick() {
 // TODO: make init call diferent function acording to the button pressed
 export default function init() {
   displayCharGrid();
+}
+
+// Display page number
+export async function pageNum() {
+  try {
+    return pageNum = getCurrentPageNumber();
+  } catch (error) {
+    console.error("Error getting page number:", error);
+  }
 }
