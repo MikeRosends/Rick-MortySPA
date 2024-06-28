@@ -35,7 +35,7 @@ export function renderCharacters(characters, numOfCols) {
   searchDiv.append(searchBar);
   content.append(bannerContainer, banner, searchDiv, paginatorTop);
 
-  $(".search-button").on("click", function () {
+  searchButton.on("click", function () {
     setName(searchBar.val());
     displayCharGrid();
   });

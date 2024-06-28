@@ -75,3 +75,4 @@ export async function fetchCharDetails(characterID) {
     // Handle differently when needed
   }
 }
+
